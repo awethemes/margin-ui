@@ -1,0 +1,5 @@
+packages:
+  - apps/*
+  - packages/*
+catalog:
+  vite-tsconfig-paths: ^5.1.4

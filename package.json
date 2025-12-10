@@ -1,0 +1,24 @@
+{
+  "name": "margin-ui",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "check": "oxlint",
+    "dev": "pnpm -r dev",
+    "build": "pnpm -r build",
+    "check-types": "pnpm -r check-types",
+    "dev:native": "pnpm --filter native dev",
+    "dev:web": "pnpm --filter web dev"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
+    "@prettier/plugin-oxc": "^0.1.3",
+    "oxlint": "^1.32.0",
+    "prettier": "^3.7.4"
+  },
+  "packageManager": "pnpm@10.25.0"
+}
