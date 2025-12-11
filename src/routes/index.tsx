@@ -9,8 +9,8 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   return (
-    <HomeLayout {...baseOptions()}>
       <LandingPage />
-    </HomeLayout>
+    // <HomeLayout {...baseOptions()}>
+    // </HomeLayout>
   )
 }
