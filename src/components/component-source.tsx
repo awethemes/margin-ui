@@ -1,6 +1,4 @@
 import type * as React from "react"
-import fs from "node:fs/promises"
-import path from "node:path"
 import { CodeBlock, Pre } from "fumadocs-ui/components/codeblock"
 import { getComponentSource } from "@/lib/registry"
 // import { CodeCollapsibleWrapper } from "@/components/code-collapsible-wrapper"

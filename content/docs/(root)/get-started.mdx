@@ -22,7 +22,7 @@ Each component page provides a command to add it to your project automatically. 
 You can install all **Margin-UI** primitives at once with a single command:
 
 ```bash
-npx shadcn@latest add @coss/ui
+npx shadcn@latest add @margin-ui/ui
 ```
 
 This will add all UI components to your project in one go, including button, card, avatar, dialog, tabs, and more.
@@ -30,7 +30,7 @@ This will add all UI components to your project in one go, including button, car
 **Recommended**: Install with our optimized color tokens for the best visual results:
 
 ```bash
-npx shadcn@latest add @coss/ui @coss/colors-zinc
+npx shadcn@latest add @margin-ui/ui @margin-ui/colors-zinc
 ```
 
 This command installs both the UI components and our default zinc-based color system, which provides crisp, contrasted borders and enhanced visual depth. See the [Styling](/ui/docs/styling) guide for more details about our color system.
@@ -45,9 +45,9 @@ This command installs both the UI components and our default zinc-based color sy
 
 ## Styling
 
-Components are styled with the design token system we use at **Cal.com**, which is defined by CSS variables and implemented with Tailwind CSS.
+Components are styled with a design token system defined by CSS variables and implemented with Tailwind CSS.
 
-The variables are the same as shadcn/ui, and are fully customizable. You can modify them in your global stylesheet (e.g., `app/globals.css`) to match your design system.
+The variables are compatible with shadcn/ui, and are fully customizable. You can modify them in your global stylesheet (e.g., `app/globals.css`) to match your design system.
 
 We've introduced a few additional tokens to provide more granular control:
 

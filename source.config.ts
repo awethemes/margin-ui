@@ -10,6 +10,9 @@ import { transformers } from "./src/lib/highlight-code"
 export const docs = defineDocs({
   dir: "content/docs",
   docs: {
+    postprocess: {
+      includeProcessedMarkdown: true,
+    },
     schema: frontmatterSchema.extend({
       links: z
         .object({

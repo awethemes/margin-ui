@@ -1,8 +1,7 @@
-import React from "react";
-import { ComponentPreviewTabs } from "@/components/component-preview-tabs";
-import { ComponentSource } from "@/components/component-source";
-import { getComponent } from "@/lib/registry";
-
+import React from "react"
+import { ComponentPreviewTabs } from "@/components/component-preview-tabs"
+import { ComponentSource } from "@/components/component-source"
+import { getComponent } from "@/lib/registry"
 
 interface ComponentPreviewProps extends Omit<
   React.ComponentProps<"div">,
@@ -23,11 +22,9 @@ export function ComponentPreview({
 }: ComponentPreviewProps) {
   const Component = getComponent(name)
 
-  console.log({ Component })
-
   if (!Component) {
     return (
-      <p className="text-muted-foreground text-sm">
+      <p className="text-orange-700 text-sm">
         Component{" "}
         <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
           {name}

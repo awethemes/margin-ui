@@ -140,7 +140,7 @@ Coming from shadcn/ui or another Radix-based library? Many components include mi
 
 ## License
 
-Open source under the COSS (Commercial Open Source Software) philosophy. See LICENSE for details.
+Open source under the MIT license. See LICENSE for details.
 
 ## Links
 
