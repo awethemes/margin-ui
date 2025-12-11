@@ -1,24 +1,59 @@
 {
   "name": "margin-ui",
-  "type": "module",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "type": "module",
   "scripts": {
-    "check": "oxlint",
-    "dev": "pnpm -r dev",
-    "build": "pnpm -r build",
-    "check-types": "pnpm -r check-types",
-    "dev:native": "pnpm --filter native dev",
-    "dev:web": "pnpm --filter web dev"
+    "dev": "vite dev --port=4000",
+    "build": "vite build",
+    "start": "node .output/server/index.mjs",
+    "types:check": "fumadocs-mdx && tsc --noEmit",
+    "postinstall": "fumadocs-mdx",
+    "lint": "oxlint",
+    "registry:build": "tsx --tsconfig ./tsconfig.node.json ./scripts/build-registry.mts",
+    "registry:validate-deps": "tsx --tsconfig ./tsconfig.node.json ./scripts/validate-registry-deps.mts"
+  },
+  "dependencies": {
+    "@base-ui-components/react": "1.0.0-rc.0",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@react-aria/focus": "^3.21.2",
+    "@shikijs/transformers": "^3.19.0",
+    "@tanstack/react-router": "1.140.1",
+    "@tanstack/react-start": "1.140.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "fumadocs-core": "16.2.4",
+    "fumadocs-mdx": "14.1.0",
+    "fumadocs-typescript": "^4.0.14",
+    "fumadocs-ui": "16.2.4",
+    "lucide-react": "^0.559.0",
+    "motion": "^12.23.26",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "react-hook-form": "^7.68.0",
+    "rehype-pretty-code": "^0.14.1",
+    "shiki": "^3.19.0",
+    "tailwind-merge": "^3.4.0",
+    "ts-morph": "^27.0.2"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
     "@prettier/plugin-oxc": "^0.1.3",
+    "@tailwindcss/vite": "^4.1.17",
+    "@types/mdx": "^2.0.13",
+    "@types/node": "^24.10.2",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "nitro": "3.0.1-alpha.1",
     "oxlint": "^1.32.0",
-    "prettier": "^3.7.4"
+    "prettier": "^3.7.4",
+    "rimraf": "^6.1.2",
+    "shadcn": "^3.5.2",
+    "tailwindcss": "^4.1.17",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.7",
+    "vite-tsconfig-paths": "^5.1.4"
   },
   "packageManager": "pnpm@10.25.0"
 }

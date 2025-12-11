@@ -1,42 +1,14 @@
-# margin-ui
+# fumadocs
 
-This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines React, TanStack Start, and more.
+This is a Tanstack Start application generated with
+[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
 
-## Features
-
-- **TypeScript** - For type safety and improved developer experience
-- **TanStack Start** - SSR framework with TanStack Router
-- **TailwindCSS** - Utility-first CSS for rapid UI development
-- **shadcn/ui** - Reusable UI components
-
-## Getting Started
-
-First, install the dependencies:
+Run development server:
 
 ```bash
-pnpm install
+npm run dev
+# or
+pnpm dev
+# or
+yarn dev
 ```
-
-
-Then, run the development server:
-
-```bash
-pnpm run dev
-```
-
-Open [http://localhost:3001](http://localhost:3001) in your browser to see the web application.
-
-## Project Structure
-
-```
-margin-ui/
-├── apps/
-│   ├── web/         # Frontend application (React + TanStack Start)
-```
-
-## Available Scripts
-
-- `pnpm run dev`: Start all applications in development mode
-- `pnpm run build`: Build all applications
-- `pnpm run dev:web`: Start only the web application
-- `pnpm run check-types`: Check TypeScript types across all apps
