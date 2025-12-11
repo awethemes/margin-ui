@@ -1,10 +1,11 @@
 import React, { useState } from "react"
+import { Link } from "@tanstack/react-router"
 import { ArrowUpRight, Check, Copy, Maximize2, MoveRight } from "lucide-react"
 import { motion, useScroll, useTransform } from "motion/react"
 import { Container } from "./container"
 import { Ruler } from "./ruler"
 import { SiteFooter } from "./site-footer"
-import { SiteNavbar } from "./site-navbar"
+import { SiteHeader } from "./site-header"
 
 const Hero = () => {
   const [copied, setCopied] = useState(false)
@@ -12,7 +13,7 @@ const Hero = () => {
   const { scrollY } = useScroll()
   const y2 = useTransform(scrollY, [0, 500], [0, -100])
 
-  const command = "npm install @margin-ui/core"
+  const command = "npx shadcn@latest add @margin-ui/react"
 
   return (
     <section className="relative pt-28 pb-16 md:pt-40 md:pb-24 lg:pt-48 lg:pb-32 min-h-screen flex flex-col justify-between bg-white overflow-hidden">
@@ -47,7 +48,7 @@ const Hero = () => {
             >
               The Space <br />
               Defines the{" "}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-neutral-400 to-neutral-200">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-stone-400 to-stone-200">
                 Form.
               </span>
             </motion.h1>
@@ -73,7 +74,7 @@ const Hero = () => {
                   }}
                   className="group relative overflow-hidden flex items-center gap-4 cursor-pointer"
                 >
-                  <div className="h-14 px-6 bg-white border border-neutral-200 flex items-center gap-4 group-hover:border-neutral-900 transition-colors duration-300">
+                  <div className="h-14 px-6 bg-white border border-stone-200 flex items-center gap-4 group-hover:border-stone-900 transition-colors duration-300">
                     <span className="font-mono text-sm text-stone-600 group-hover:text-stone-900 transition-colors">
                       <span className="text-stone-300 select-none">$ </span>
                       {command}
@@ -101,12 +102,12 @@ const Hero = () => {
             style={{ y: y2 }}
             className="lg:col-span-4 hidden lg:flex justify-end relative"
           >
-            <div className="w-72 xl:w-80 h-80 xl:h-96 border border-neutral-200 relative p-6 xl:p-8 flex flex-col justify-between group hover:border-neutral-400 transition-colors duration-500 bg-white">
+            <div className="w-72 xl:w-80 h-80 xl:h-96 border border-stone-200 relative p-6 xl:p-8 flex flex-col justify-between group hover:border-stone-400 transition-colors duration-500 bg-white">
               <div className="absolute -top-1 -left-1 w-2 h-2 bg-stone-900" />
               <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-stone-900" />
 
               <div className="space-y-4 xl:space-y-6 opacity-50 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="w-full h-24 xl:h-32 bg-stone-100 border border-neutral-200 relative overflow-hidden">
+                <div className="w-full h-24 xl:h-32 bg-stone-100 border border-stone-200 relative overflow-hidden">
                   <div className="absolute inset-0 grid grid-cols-6 gap-px bg-white opacity-20">
                     {Array.from({ length: 24 }).map((_, i) => (
                       <div
@@ -117,15 +118,15 @@ const Hero = () => {
                   </div>
                 </div>
                 <div className="space-y-3 font-mono text-[10px] text-stone-500">
-                  <div className="flex justify-between border-b border-neutral-100 pb-2">
+                  <div className="flex justify-between border-b border-stone-100 pb-2">
                     <span>CONTAINER_WIDTH</span>
                     <span className="text-stone-900">1440px</span>
                   </div>
-                  <div className="flex justify-between border-b border-neutral-100 pb-2">
+                  <div className="flex justify-between border-b border-stone-100 pb-2">
                     <span>GRID_GUTTER</span>
                     <span className="text-stone-900">24px</span>
                   </div>
-                  <div className="flex justify-between border-b border-neutral-100 pb-2">
+                  <div className="flex justify-between border-b border-stone-100 pb-2">
                     <span>BASE</span>
                     <span className="text-stone-900">Base UI</span>
                   </div>
@@ -147,13 +148,14 @@ const PreviewCard = ({
   label,
   children,
   colSpan = "col-span-1",
-}: {
+  ...props
+}: React.ComponentProps<"div"> & {
   label: string
-  children: React.ReactNode
   colSpan?: string
 }) => (
   <div
-    className={`group relative bg-white border-r border-b border-neutral-200 p-6 md:p-8 lg:p-10 min-h-[280px] md:min-h-80 flex flex-col justify-between hover:bg-stone-50/50 transition-colors duration-300 ${colSpan}`}
+    {...props}
+    className={`group relative bg-white border-r border-b border-stone-200 p-6 md:p-8 lg:p-10 min-h-[280px] md:min-h-80 flex flex-col justify-between hover:bg-stone-50/50 transition-colors duration-300 ${colSpan}`}
   >
     <div className="flex justify-between items-start w-full mb-8">
       <span className="font-mono text-[10px] uppercase tracking-widest text-stone-400 group-hover:text-stone-900 transition-colors">
@@ -168,16 +170,16 @@ const PreviewCard = ({
     <div className="w-full flex items-center justify-center">{children}</div>
 
     {/* Corner Accents refined */}
-    <div className="absolute top-0 right-0 w-3 h-3 border-l border-b border-neutral-900 opacity-0 group-hover:opacity-100 transition-opacity" />
-    <div className="absolute bottom-0 left-0 w-3 h-3 border-r border-t border-neutral-900 opacity-0 group-hover:opacity-100 transition-opacity" />
+    <div className="absolute top-0 right-0 w-3 h-3 border-l border-b border-stone-900 opacity-0 group-hover:opacity-100 transition-opacity" />
+    <div className="absolute bottom-0 left-0 w-3 h-3 border-r border-t border-stone-900 opacity-0 group-hover:opacity-100 transition-opacity" />
   </div>
 )
 
 const ComponentPreview = () => {
   return (
-    <section className="bg-stone-100 border-t border-neutral-200">
+    <section className="bg-stone-100 border-t border-stone-200">
       <div className="max-w-screen-2xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-l border-neutral-200 bg-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-l border-stone-200 bg-white">
           <PreviewCard label="Typography / Heading">
             <div className="text-left w-full space-y-4">
               <h2 className="text-3xl md:text-4xl font-light tracking-tighter text-stone-900">
@@ -191,14 +193,14 @@ const ComponentPreview = () => {
 
           <PreviewCard label="Interaction / Button">
             <div className="flex flex-col gap-3 w-full max-w-[200px]">
-              <button className="h-11 px-6 bg-stone-900 text-white text-sm font-medium hover:bg-stone-800 transition-all active:scale-95 flex justify-between items-center group/btn focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2">
+              <button className="h-11 px-6 bg-stone-900 text-white text-sm font-medium hover:bg-stone-800 transition-all active:scale-95 flex justify-between items-center group/btn focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-2">
                 <span>Deploy</span>
                 <ArrowUpRight
                   size={14}
                   className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
                 />
               </button>
-              <button className="h-11 px-6 bg-white border border-neutral-200 text-stone-900 text-sm font-medium hover:border-neutral-900 transition-colors active:scale-95 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2">
+              <button className="h-11 px-6 bg-white border border-stone-200 text-stone-900 text-sm font-medium hover:border-stone-900 transition-colors active:scale-95 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-2">
                 Documentation
               </button>
             </div>
@@ -210,7 +212,7 @@ const ComponentPreview = () => {
                 <input
                   type="text"
                   placeholder=" "
-                  className="peer w-full h-8 bg-transparent border-b border-neutral-300 text-stone-900 focus:outline-none focus:border-neutral-900 transition-colors placeholder-transparent font-mono text-sm focus-visible:ring-0"
+                  className="peer w-full h-8 bg-transparent border-b border-stone-300 text-stone-900 focus:outline-none focus:border-stone-900 transition-colors placeholder-transparent font-mono text-sm focus-visible:ring-0"
                 />
                 <label className="absolute left-0 top-1 text-stone-400 text-xs font-mono uppercase tracking-widest transition-all peer-focus:-top-4 peer-focus:text-stone-900 peer-not-placeholder-shown:-top-4 peer-not-placeholder-shown:text-stone-900 cursor-text">
                   Email Address
@@ -245,8 +247,8 @@ const ComponentPreview = () => {
             colSpan="md:col-span-2"
           >
             <div className="grid grid-cols-2 gap-8 w-full max-w-md">
-              <div className="aspect-square bg-stone-100 border border-neutral-200 flex items-center justify-center">
-                <div className="w-16 h-16 border border-dashed border-neutral-400 rounded-full animate-spin-slow" />
+              <div className="aspect-square bg-stone-100 border border-stone-200 flex items-center justify-center">
+                <div className="w-16 h-16 border border-dashed border-stone-400 rounded-full animate-spin-slow" />
               </div>
               <div className="flex flex-col justify-center space-y-4">
                 <div className="h-2 w-32 bg-stone-200" />
@@ -264,11 +266,13 @@ const ComponentPreview = () => {
 
 export function LandingPage() {
   return (
-    <div className="font-sans min-h-screen bg-white text-stone-900 selection:bg-stone-900 selection:text-white overflow-x-hidden">
-      <SiteNavbar />
+    <>
+      <SiteHeader />
+
       <Hero />
       <ComponentPreview />
-      <section className="py-24 md:py-32 lg:py-40 bg-white text-center border-t border-neutral-100">
+
+      <section className="py-24 md:py-32 lg:py-40 bg-white text-center border-t border-stone-100">
         <Container>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light tracking-tighter mb-6">
             Production-ready components.
@@ -278,15 +282,17 @@ export function LandingPage() {
             Built on Base UI. Fully accessible. 100% open source.
           </p>
 
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 text-sm font-medium border-b border-neutral-900 pb-0.5 hover:text-stone-600 hover:border-neutral-600 transition-colors font-mono uppercase tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2"
+          <Link
+            to="/docs/$"
+            params={{ _splat: "components" }}
+            className="inline-flex items-center gap-2 text-sm font-medium border-b border-stone-900 pb-0.5 hover:text-stone-600 hover:border-stone-600 transition-colors font-mono uppercase tracking-wide focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-900 focus-visible:ring-offset-2"
           >
             View All Components <MoveRight size={14} />
-          </a>
+          </Link>
         </Container>
       </section>
+
       <SiteFooter />
-    </div>
+    </>
   )
 }

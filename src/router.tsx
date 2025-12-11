@@ -7,6 +7,7 @@ export function getRouter() {
     routeTree,
     defaultPreload: "intent",
     scrollRestoration: true,
+    notFoundMode: "root",
     defaultNotFoundComponent: NotFound,
   })
 }

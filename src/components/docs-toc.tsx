@@ -56,6 +56,7 @@ export function DocsTableOfContents({
     () => toc.map((item) => item.url.replace("#", "")),
     [toc]
   )
+
   const activeHeading = useActiveItem(itemIds)
 
   if (!toc?.length) {

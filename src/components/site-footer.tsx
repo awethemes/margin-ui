@@ -4,7 +4,7 @@ import { Container } from "./container"
 const Separator = () => <div className="w-full h-px bg-stone-200" />
 
 export const SiteFooter = () => (
-  <footer className="bg-white pt-24 md:pt-32 pb-12 border-t border-neutral-200">
+  <footer className="bg-white pt-24 md:pt-32 pb-12 border-t border-stone-200">
     <Container>
       <div className="flex flex-col md:flex-row justify-between items-start mb-20 gap-12">
         <div className="max-w-md">

@@ -28,6 +28,7 @@
     "fumadocs-mdx": "14.1.0",
     "fumadocs-typescript": "^4.0.14",
     "fumadocs-ui": "16.2.4",
+    "jotai": "^2.16.0",
     "lucide-react": "^0.559.0",
     "motion": "^12.23.26",
     "react": "^19.2.1",

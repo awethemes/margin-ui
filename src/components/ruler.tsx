@@ -12,10 +12,8 @@ export function Ruler({
   return (
     <div
       className={cn(
-        "flex overflow-hidden opacity-20 pointer-events-none select-none",
-        isHorizontal
-          ? "w-full h-5 border-b border-stone-500"
-          : "h-full w-5 flex-col border-r border-stone-500",
+        "flex overflow-hidden pointer-events-none select-none border-stone-300",
+        isHorizontal ? "w-full h-5 border-b" : "h-full w-5 flex-col border-r",
         className
       )}
     >
@@ -29,8 +27,9 @@ export function Ruler({
               : "flex-col items-end justify-center"
           )}
         >
-          <div
+          <span
             className={cn(
+              "inline-block",
               isHorizontal ? "h-2 w-px" : "w-2 h-px",
               i % 5 === 0 ? "bg-stone-500" : "bg-stone-300"
             )}
