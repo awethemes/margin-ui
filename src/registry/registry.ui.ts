@@ -62,7 +62,7 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "autocomplete",
-    registryDependencies: ["@coss/input", "@coss/scroll-area"],
+    registryDependencies: ["@margin-ui/input", "@margin-ui/scroll-area"],
     type: "registry:ui",
   },
   {
@@ -190,7 +190,7 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "combobox",
-    registryDependencies: ["@coss/input", "@coss/scroll-area"],
+    registryDependencies: ["@margin-ui/input", "@margin-ui/scroll-area"],
     type: "registry:ui",
   },
   {
@@ -202,7 +202,7 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "dialog",
-    registryDependencies: ["@coss/scroll-area"],
+    registryDependencies: ["@margin-ui/scroll-area"],
     type: "registry:ui",
   },
   {
@@ -275,7 +275,7 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "group",
-    registryDependencies: ["@coss/separator"],
+    registryDependencies: ["@margin-ui/separator"],
     type: "registry:ui",
   },
   {
@@ -297,7 +297,7 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "input-group",
-    registryDependencies: ["@coss/input", "@coss/textarea"],
+    registryDependencies: ["@margin-ui/input", "@margin-ui/textarea"],
     type: "registry:ui",
   },
   {
@@ -359,7 +359,7 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "number-field",
-    registryDependencies: ["@coss/label"],
+    registryDependencies: ["@margin-ui/label"],
     type: "registry:ui",
   },
   {
@@ -370,7 +370,7 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "pagination",
-    registryDependencies: ["@coss/button"],
+    registryDependencies: ["@margin-ui/button"],
     type: "registry:ui",
   },
   {
@@ -459,7 +459,7 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "sheet",
-    registryDependencies: ["@coss/scroll-area"],
+    registryDependencies: ["@margin-ui/scroll-area"],
     type: "registry:ui",
   },
   {
@@ -471,14 +471,14 @@ export const ui: Registry["items"] = [
     ],
     name: "sidebar",
     registryDependencies: [
-      "@coss/button",
-      "@coss/input",
-      "@coss/separator",
-      "@coss/sheet",
-      "@coss/skeleton",
-      "@coss/tooltip",
-      "@coss/use-mobile",
-      "@coss/utils",
+      "@margin-ui/button",
+      "@margin-ui/input",
+      "@margin-ui/separator",
+      "@margin-ui/sheet",
+      "@margin-ui/skeleton",
+      "@margin-ui/tooltip",
+      "@margin-ui/use-mobile",
+      "@margin-ui/utils",
     ],
     type: "registry:ui",
   },
@@ -577,7 +577,7 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "toast",
-    registryDependencies: ["@coss/button"],
+    registryDependencies: ["@margin-ui/button"],
     type: "registry:ui",
   },
   {
@@ -600,7 +600,7 @@ export const ui: Registry["items"] = [
       },
     ],
     name: "toggle-group",
-    registryDependencies: ["@coss/separator", "@coss/toggle"],
+    registryDependencies: ["@margin-ui/separator", "@margin-ui/toggle"],
     type: "registry:ui",
   },
   {
