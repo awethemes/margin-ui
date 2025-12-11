@@ -17,6 +17,7 @@
     "@fontsource/geist": "^5.2.8",
     "@fontsource/geist-mono": "^5.2.7",
     "@radix-ui/react-slot": "^1.2.4",
+    "@radix-ui/react-use-controllable-state": "^1.2.2",
     "@react-aria/focus": "^3.21.2",
     "@shikijs/transformers": "^3.19.0",
     "@tanstack/react-router": "1.140.5",
