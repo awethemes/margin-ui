@@ -152,8 +152,10 @@ When converting shadcn/ui components to Base UI equivalents:
 The project uses:
 - **Vite** for bundling
 - **Nitro** for SSR output (configured in vite.config.ts)
-- **TanStack Start** with prerendering enabled
+- **TanStack Start** with prerendering **disabled** (Nitro handles SSR instead)
 - Port 3000 for dev server (overridden by package.json script to port 4000)
+
+**Important**: TanStack Start prerendering is disabled in `vite.config.ts` because it conflicts with Nitro's SSR handling. The preview server fails to start during prerendering when both are enabled. Nitro provides the SSR functionality needed for production.
 
 ## Notes for AI/LLM Development
 

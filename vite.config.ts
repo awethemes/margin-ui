@@ -16,8 +16,9 @@ export default defineConfig({
       projects: ["./tsconfig.json"],
     }),
     tanstackStart({
+      // Prerendering disabled - using Nitro for SSR instead
       prerender: {
-        enabled: true,
+        enabled: false,
       },
       router: {
         quoteStyle: "double",
